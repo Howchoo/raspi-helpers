@@ -48,7 +48,7 @@ JasperLocal () {
 	wget http://downloads.sourceforge.net/project/cmusphinx/sphinxbase/0.8/sphinxbase-0.8.tar.gz
 	wget http://downloads.sourceforge.net/project/cmusphinx/pocketsphinx/0.8/pocketsphinx-0.8.tar.gz
 	wget http://distfiles.macports.org/openfst/openfst-1.3.4.tar.gz
-	wget https://mitlm.googlecode.com/files/mitlm-0.4.1.tar.gz
+	wget https://github.com/mitlm/mitlm/releases/download/v0.4.1/mitlm_0.4.1.tar.gz
 	wget https://m2m-aligner.googlecode.com/files/m2m-aligner-1.2.tar.gz
 	wget https://phonetisaurus.googlecode.com/files/is2013-conversion.tgz
 	wget https://www.dropbox.com/s/kfht75czdwucni1/g014b2b.tgz
@@ -58,7 +58,7 @@ JasperLocal () {
 	tar xvf m2m-aligner-1.2.tar.gz
 	tar xvf openfst-1.3.4.tar.gz
 	tar xvf is2013-conversion.tgz
-	tar xvf mitlm-0.4.1.tar.gz
+	tar xvf mitlm_0.4.1.tar.gz
 	tar xvf g014b2b.tgz
 
 	# Install Speech-To-Text Engine Pocketsphinx and CMUCLMTK
@@ -98,12 +98,12 @@ JasperLocal () {
 	sudo cp ~/m2m-aligner-1.2/m2m-aligner /usr/local/bin/m2m-aligner
 	echo "$(date) - Completed building and installing m2m-aligner-1.2..." >> ~/jasper-installer.log
 
-	echo "$(date) - Building mitlm-0.4.1..." >> ~/jasper-installer.log
-	cd ~/mitlm-0.4.1/
+	echo "$(date) - Building mitlm_0.4.1..." >> ~/jasper-installer.log
+	cd ~/mitlm_0.4.1/
 	./configure
 	make -j2
 	sudo make install
-	echo "$(date) - Completed building and installing mitlm-0.4.1..." >> ~/jasper-installer.log
+	echo "$(date) - Completed building and installing mitlm_0.4.1..." >> ~/jasper-installer.log
 
 	echo "$(date) - Building is2013-conversion..." >> ~/jasper-installer.log
 	cd ~/is2013-conversion/phonetisaurus/src/
